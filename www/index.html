@@ -7,44 +7,51 @@
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>Hello World</title>
+        <title>Pocket dices</title>
     </head>
     <body>
         <button class="float-left" onclick="singleRoll(6)">K6</button>
         <button class="float-left" onclick="singleRoll(4)">K4</button>
         <button class="float-left" onclick="singleRoll(8)">K8</button>
         <br><br>
-        <button onclick="duoRoll(6)">2K6</button>
-        <button type="button" disabled>Custom dice</button>
-
-        <script>
-        function singleRoll(a) {
-            var x = document.getElementById("x");
-            x.innerHTML = Math.floor((Math.random() * a) + 1);
-        }
-
-        function duoRoll(a){
-            var x1 = Math.floor((Math.random() * a) + 1);
-            var x2 = Math.floor((Math.random() * a) + 1);
-            var x = document.getElementById("x").innerHTML = x1 + " " + x2;
-        }
-        </script>
-        <br>
-        <p id="x"></p> 
-        
-        <!--
-        <div class="app">
-            <h1>PhoneGap</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
+        <button class="float-left" onclick="duoRoll(6)">2K6</button>
+        <div class="float-left">
+    				<input type="text" name="customDice" />
         </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            app.initialize();
-        </script>
-        -->
+        <button onClick="customRoll()">Custom dice</button>
+        <script>
+            function singleRoll(a) {
+                var x = document.getElementById("x");
+                x.innerHTML = Math.floor((Math.random() * a) + 1);
+            }
+
+            function duoRoll(a){
+                var x1 = Math.floor((Math.random() * a) + 1);
+                var x2 = Math.floor((Math.random() * a) + 1);
+                var x = document.getElementById("x").innerHTML = x1 + " " + x2;
+        		}
+
+        		function customRoll(){
+        			var a = document.getElementsByName("customDice")[0].value;
+        			var x = document.getElementById("x").innerHTML = Math.floor((Math.random() * a) + 1);
+        		}
+        </script><br><br><br>
+        <b><p id="x"></p></b>
+
+        <!--
+    	<button onClick="zzz()">Now</button>
+    	<input type="text" name="acc" />
+    	<script>
+        function zzz	()
+        {
+            var acc = document.getElementsByName("acc")[0].value
+            var pass = document.getElementsByName('pass').value;
+
+            alert (acc);
+        }
+       </script>
+				<button type="button" disabled>Custom dice</button>
+
+       -->
     </body>
 </html>
