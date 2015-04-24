@@ -10,6 +10,7 @@
         <title>Pocket dices</title>
     </head>
     <body>
+        <script src="phonegap.js"></script>
         <button class="float-left" onclick="singleRoll(6)">K6</button>
         <button class="float-left" onclick="singleRoll(4)">K4</button>
         <button class="float-left" onclick="singleRoll(8)">K8</button>
@@ -18,7 +19,7 @@
         <div class="float-left">
     				<input type="text" name="customDice" />
         </div>
-        <button onClick="customRoll()">Custom dice</button>
+        <button class="float-left" onClick="customRoll()">Custom dice</button>
         <script>
             function singleRoll(a) {
                 var x = document.getElementById("x");
@@ -33,11 +34,12 @@
 
         		function customRoll(){
         			var a = document.getElementsByName("customDice")[0].value;
-        			var x = document.getElementById("x").innerHTML = Math.floor((Math.random() * a) + 1);
+        			var x = document.getElementById("x").innerHTML = Math.floor((Math.random() * a) + 1);1
         		}
         </script><br><br><br>
+        <h1>
         <b><p id="x"></p></b>
-
+        </h1>
         <!--
     	<button onClick="zzz()">Now</button>
     	<input type="text" name="acc" />
